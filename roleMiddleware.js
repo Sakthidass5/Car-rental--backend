@@ -8,3 +8,4 @@ const roleMiddleware = (role) => {
 };
 
 module.exports = roleMiddleware;
+
