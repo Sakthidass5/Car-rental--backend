@@ -6,11 +6,7 @@ exports.getCars = async (req, res) => {
   res.json(cars);
 };
 
-// exports.addCar = async (req, res) => {
-//   const car = new Car(req.body);
-//   await car.save();
-//   res.status(201).json(car);
-// };
+
 exports.addCar = async (req, res) => {
   const { name, type, price } = req.body;
   const imageUrl = req.file ? `/uploads/${req.file.filename}` : null;
@@ -36,15 +32,6 @@ exports.deleteCar = async (req, res) => {
   res.json({ message: 'Car deleted' });
 };
 
-// exports.updateCar = async (req, res) => {
-//   const car = await Car.findByIdAndUpdate(req.params.id, req.body, { new: true });
-//   res.json(car);
-// };
-
-// exports.deleteCar = async (req, res) => {
-//   await Car.findByIdAndDelete(req.params.id);
-//   res.json({ message: 'Car deleted' });
-// };
 
 exports.bookCar = async (req, res) => {
   const booking = new Booking({
@@ -54,5 +41,10 @@ exports.bookCar = async (req, res) => {
     endDate: req.body.endDate
   });
   await booking.save();
-  res.status(201).json(booking);
+
+  res.status(201).json({
+    message: 'Booking confirmed successfully',
+    booking,
+  });
 };
+
