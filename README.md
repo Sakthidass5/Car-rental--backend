@@ -1,3 +1,9 @@
+Install dependencies: npm install
+
+Start the server: npm start
+
+
+Folder Structure:
 backend/
 ├── controllers/
 │   ├── authController.js
