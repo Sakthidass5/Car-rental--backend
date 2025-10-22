@@ -7,4 +7,4 @@ const bookingSchema = new mongoose.Schema({
   endDate: Date
 });
 
-module.exports = mongoose.model('Booking', bookingSchema);
+module.exports = mongoose.model('Booking', bookingSchema)
