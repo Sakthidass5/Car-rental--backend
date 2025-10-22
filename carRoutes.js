@@ -12,9 +12,6 @@ const authMiddleware = require('../middleware/authMiddleware');
 const roleMiddleware = require('../middleware/roleMiddleware');
 
 router.get('/', getCars);
-// router.post('/', authMiddleware, roleMiddleware('admin'), addCar);
-// router.put('/:id', authMiddleware, roleMiddleware('admin'), updateCar);
-// router.delete('/:id', authMiddleware, roleMiddleware('admin'), deleteCar);
 router.post(
   '/',
   authMiddleware,
